@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            color: #222;
+            padding-bottom: 40px;
+        }
+
+        /* NAVIGATION */
+        nav {
+            width: 100%;
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            color: #fff;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        nav h1 {
+            font-size: 20px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* MOBILE MENU */
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #222;
+            width: 100%;
+            text-align: center;
+            animation: slideDown 0.3s ease;
+        }
+
+        .mobile-menu a {
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* HEADER */
+        header {
+            margin-top: 80px;
+            padding: 50px 20px;
+            text-align: center;
+            background: #ffffffaa;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+            border-radius: 15px;
+        }
+
+        header h2 {
+            font-size: 28px;
+        }
+
+        /* BIO SECTION */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #ffffffcc;
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+            border-left: 6px solid #ff6a00;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* HOBBY IMAGES */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* RESPONSIVE NAV */
+        @media (max-width: 768px) {
+            .menu { display: none; }
+            .hamburger { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>My Website</h1>
+        <div class="menu">
+            <a href="#about">About Me</a>
+            <a href="#hobby">My Hobby</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" onclick="toggleMenu()">About Me</a>
+        <a href="#hobby" onclick="toggleMenu()">My Hobby</a>
+    </div>
+
+    <header>
+        <h2>Welcome to My Personal Website</h2>
+        <p>This website introduces who I am and what I love doing.</p>
+    </header>
+
+    <div class="container" id="about">
+        <h3>About Me</h3>
+        <p>Hello! I would like to introduce myself I am <strong>Emir Mohammad D. Casarungan</strong>. currently a 2nd-year student majoring in Bachelor of Science in Computer Applications (BSCA).I live in Iligan City, which is widely known as the "City of Waterfalls." I created this website to share a little bit about myself. I enjoy learning new things, exploring different hobbies, and improving my skills. I hope you enjoy browsing through it!</p>
+    </div>
+
+    <div class="container" id="hobby">
+        <h3>My Cycling Hobby</h3>
+        <p>One of my favorite hobbies is cycling. It helps me stay active, clear my mind, and enjoy the outdoors. Here are some photos from my rides:</p>
+
+        <div class="gallery">
+        <a href="https://drive.google.com/file/d/1MXDN7Bw_bbt82uJpOwlhGz7eGKO9ieum/view?usp=drivesdk" target="_blank"><img src="https://your-link-here.com/bike1-image" alt="Cycling by the sea"></a>
+        <a href="https://drive.google.com/file/d/1jgQ5SJH_L8AK7UOnGEAGrVHdVr1Yh55G/view?usp=drivesdk" target="_blank"><img src="https://your-link-here.com/bike2-image" alt="Cyclist at Kauswagan landmark"></a>
+        <a href="https://drive.google.com/file/d/1vTTjy79WtBjuoGOJb3bzJWAVfIPmp7-O/view?usp=drivesdk" target="_blank"><img src="https://your-link-here.com/bike3-image" alt="Bike at riverside night scene"></a>
+      </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+    <div class="container" id="skills">
+        <h3>My Skills</h3>
+        <p>Here are some of the skills I continuously work on improving:</p>
+        <ul>
+            <li>Basic Web Development (HTML & CSS)</li>
+            <li>Cycling Endurance & Road Safety</li>
+            <li>Problem Solving & Critical Thinking</li>
+            <li>Communication & Teamwork</li>
+        </ul>
+    </div>
+
+    <div class="container" id="goals">
+        <h3>My Goals</h3>
+        <p>I aim to improve myself in different aspects of life. Some of my personal goals include:</p>
+        <ul>
+            <li>Becoming a stronger and more disciplined cyclist</li>
+            <li>Learning advanced web design and development</li>
+            <li>Creating more personal projects to build experience</li>
+            <li>Exploring new places through my cycling adventures</li>
+        </ul>
+    </div>
+
+    <footer style="text-align:center; padding:20px; margin-top:20px; color:#fff; background:#ee0979; border-radius:10px; width:90%; margin-left:auto; margin-right:auto;">
+        © 2025 My Personal Website
+    </footer>
+
+</body>
+</html>
